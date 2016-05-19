@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13a04502-2297-4bf7-8275-4e0eddb65cb7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php" />
     </list>
     <ignored path="rlacadvogados.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,11 +85,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4881356">
+            <state vertical-scroll-proportion="-10.666667">
               <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_05_19_021452_create_cargos_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.185185">
+              <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_05_19_032318_create_vagas_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4661017">
+              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -138,8 +159,6 @@
         <option value="$PROJECT_DIR$/database/seeds/CategoriaTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/VagaController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_05_19_005113_create_setors_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php" />
         <option value="$PROJECT_DIR$/app/Vaga.php" />
         <option value="$PROJECT_DIR$/app/Cargo.php" />
         <option value="$PROJECT_DIR$/database/seeds/VagaTableSeeder.php" />
@@ -157,6 +176,8 @@
         <option value="$PROJECT_DIR$/.buildpacks" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php" />
       </list>
     </option>
   </component>
@@ -681,20 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6296296">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VagaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6666665">
@@ -844,8 +851,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4881356">
+        <state vertical-scroll-proportion="-10.666667">
           <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_19_021452_create_cargos_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.185185">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_19_032318_create_vagas_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4661017">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
           <folding />
         </state>
       </provider>

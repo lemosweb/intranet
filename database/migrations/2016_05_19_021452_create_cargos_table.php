@@ -12,7 +12,7 @@ class CreateCargosTable extends Migration
      */
     public function up()
     {
-        DB::statement('set foreign_key_checks = 0;');
+/*        DB::statement('set foreign_key_checks = 0;');*/
         Schema::create('cargos', function (Blueprint $table) {
 
             $table->increments('id');
@@ -23,7 +23,7 @@ class CreateCargosTable extends Migration
             $table->foreign('setor_id')->references('id')->on('setors');
 
         });
-        DB::statement('set foreign_key_checks = 1;');
+       /* DB::statement('set foreign_key_checks = 1;');*/
     }
 
     /**
