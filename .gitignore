@@ -4,5 +4,3 @@
 Homestead.yaml
 Homestead.json
 .env
-/database/migrations/2016_05_19_032318_create_vagas_table.php
-/database/migrations/2016_05_19_021452_create_cargos_table.php

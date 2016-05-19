@@ -20,7 +20,7 @@ class CreateCargosTable extends Migration
             $table->timestamps();
 
             $table->integer('setor_id')->unsigned();
-            $table->foreign('setor_id')->references('id')->on('setors');
+            $table->foreign('setor_id')->references('id')->on('setors')->onDelete('cascade');
 
         });
        DB::statement('set foreign_key_checks = 1;');

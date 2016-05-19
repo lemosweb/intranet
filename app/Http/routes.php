@@ -26,6 +26,8 @@ Route::get('/', function () {
             Route::post('store',['as' => 'setor.store', 'uses' => 'SetorController@store']);
             Route::get('{id}/edit',['as' => 'setor.edit', 'uses' => 'SetorController@edit']);
             Route::put('{id}/update', ['as' => 'setor.update', 'uses' => 'SetorController@update']);
+            Route::get('{id}/destroy',['as' => 'setor.destroy', 'uses' => 'SetorController@destroy']);
+
 
         });
 
