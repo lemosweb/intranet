@@ -7,7 +7,7 @@
     <div class="container">
         <div class="page-header">
             <h1>Setores</h1>
-            <a href="#" class="btn btn-success">Cadastrar Setor</a>
+            <a href="{{ route('setor.cadastrar') }}" class="btn btn-success">Cadastrar Setor</a>
             <table class="table">
                 <tr>
                     <th>ID</th>
