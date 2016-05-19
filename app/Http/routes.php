@@ -16,24 +16,31 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin'], function(){
 
-    Route::group(['prefix' => 'setor'], function(){
+    Route::group(['prefix' => 'admin'], function(){
 
-        Route::get('/',['as' => 'setor.index', 'uses' => 'SetorController@index']);
-        Route::get('cadastrar',['as' => 'setor.cadastrar', 'uses' => 'SetorController@cadastrar']);
-        Route::post('store',['as' => 'setor.store', 'uses' => 'SetorController@store']);
+        Route::group(['prefix' => 'setor'], function(){
+
+            Route::get('/',['as' => 'setor.index', 'uses' => 'SetorController@index']);
+            Route::get('cadastrar',['as' => 'setor.cadastrar', 'uses' => 'SetorController@cadastrar']);
+            Route::post('store',['as' => 'setor.store', 'uses' => 'SetorController@store']);
+            Route::get('{id}/edit',['as' => 'setor.edit', 'uses' => 'SetorController@edit']);
+            Route::put('{id}/update', ['as' => 'setor.update', 'uses' => 'SetorController@update']);
+
+        });
+
+
+
+
+        Route::get('cargo',['as' => 'cargo.index', 'uses' => 'CargoController@index']);
+        Route::get('categoria',['as' => 'categoria.index', 'uses' => 'CategoriaController@index']);
+        Route::get('vaga',['as' => 'vaga.index', 'uses' => 'VagaController@index']);
 
     });
 
 
 
 
-    Route::get('cargo',['as' => 'cargo.index', 'uses' => 'CargoController@index']);
-    Route::get('categoria',['as' => 'categoria.index', 'uses' => 'CategoriaController@index']);
-    Route::get('vaga',['as' => 'vaga.index', 'uses' => 'VagaController@index']);
-
-});
 
 Route::auth();
 

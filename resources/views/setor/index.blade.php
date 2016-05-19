@@ -20,7 +20,7 @@
                     <tr>
                         <td>{{ $setor->id }}</td>
                         <td>{{ $setor->nome }}</td>
-                        <td><a href="#" class="btn btn-default">Editar</a>
+                        <td><a href="{{ route('setor.edit', ['id' => $setor->id ]) }}" class="btn btn-default">Editar</a>
                             <a href="#" class="btn btn-danger">Excluir</a></td>
 
                     </tr>
