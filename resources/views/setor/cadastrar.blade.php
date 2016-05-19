@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="page-header">
-            <h1>Cadastrar Produto</h1>
+            <h1>Cadastrar Setor</h1>
         </div>
         @include('error_template')
     </div>
