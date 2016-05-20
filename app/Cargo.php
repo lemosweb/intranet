@@ -13,14 +13,15 @@ class Cargo extends Model
 
     ];
 
-    public function setor()
-    {
-        return $this->belongsTo('App\Setor');
-    }
 
     public function vagas()
     {
         return $this->hasMany('App\Vaga');
+    }
+
+    public function users()
+    {
+        return $this->hasMany('App\User');
     }
 
 

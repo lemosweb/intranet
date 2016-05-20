@@ -25,7 +25,10 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
+            <li><a href="{{ route('colaborador.index') }}">Colaborador</a></li>
             <li><a href="{{ route('setor.index') }}">Setores</a></li>
+            <li><a href="{{ route('cargo.index') }}">Cargo</a></li>
+
         </ul>
     </div>
 </nav>

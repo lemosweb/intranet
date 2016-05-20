@@ -22,19 +22,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Categoria::class, function (Faker\Generator $faker) {
     return [
-        'nome' => $faker->name
+        'nome' => $faker->word
     ];
 });
 
 $factory->define(App\Setor::class, function (Faker\Generator $faker) {
     return [
-        'nome' => $faker->name
+        'nome' => $faker->word
     ];
 });
 
 $factory->define(App\Cargo::class, function (Faker\Generator $faker) {
     return [
-        'nome' => $faker->name,
+        'nome' => $faker->word,
         'setor_id' => $faker->numberBetween(1,5)
 
     ];

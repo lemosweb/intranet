@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','celular','foto','nivel_de_acesso','status','cargo_id','setor_id'
     ];
 
     /**
@@ -23,4 +23,35 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function artigos()
+    {
+        return $this->hasMany('App\Artigo');
+    }
+
+    public function cargo()
+    {
+        return $this->belongsTo('App\Cargo');
+    }
+
+    public function contatos()
+    {
+        return $this->hasMany('App\Vaga');
+    }
+
+    public function setor()
+    {
+        return $this->belongsTo('App\Setor');
+    }
+
+    public function vagas()
+    {
+        return $this->hasMany('App\Vaga');
+    }
+
+
+
+
+
+
 }

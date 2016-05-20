@@ -12,18 +12,16 @@ class CreateCargosTable extends Migration
      */
     public function up()
     {
-        DB::statement('set foreign_key_checks = 0;');
+
         Schema::create('cargos', function (Blueprint $table) {
 
             $table->increments('id');
             $table->string('nome', 255);
             $table->timestamps();
 
-            $table->integer('setor_id')->unsigned();
-            $table->foreign('setor_id')->references('id')->on('setors')->onDelete('cascade');
 
         });
-       DB::statement('set foreign_key_checks = 1;');
+
     }
 
     /**

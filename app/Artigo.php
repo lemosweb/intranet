@@ -4,16 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Vaga extends Model
+class Artigo extends Model
 {
     protected $fillable = [
-        'status',
-        'cargo_id'
+        'titulo', 'texto', 'link', 'data', 'validade', 'status_aprovacao', 'colaborador_id', 'categoria_id', 'setor_id'
     ];
 
-    public function cargo()
+    public function categoria()
     {
-        return $this->belongsTo('App\Cargo');
+        return $this->belongsTo('App\Categoria');
     }
 
     public function setor()
@@ -25,4 +24,10 @@ class Vaga extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+
+
+
+
+
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class VagaController extends Controller
+class AdminVagaController extends Controller
 {
     public function index()
     {

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class CategoriaController extends Controller
+class AdminCategoriaController extends Controller
 {
     public function  index()
     {

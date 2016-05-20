@@ -10,8 +10,13 @@ class Setor extends Model
         'nome'
     ];
 
-    public function cargos()
+    public function vagas()
     {
-        return $this->hasMany('App\Cargo');
+        return $this->hasMany('App\Vaga');
+    }
+
+    public function users()
+    {
+        return $this->hasMany('App\User');
     }
 }

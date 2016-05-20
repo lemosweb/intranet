@@ -6,7 +6,7 @@ use App\Setor;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
-class SetorController extends Controller
+class AdminSetorController extends Controller
 {
 
     private $setor;
@@ -21,13 +21,13 @@ class SetorController extends Controller
 
         $setores = $this->setor->paginate(5);
 
-        return view('setor.index',compact('setores'));
+        return view('admin.setor.index',compact('setores'));
     }
 
 
     public function cadastrar()
     {
-        return view('setor.cadastrar');
+        return view('admin.setor.cadastrar');
     }
 
 
@@ -44,7 +44,7 @@ class SetorController extends Controller
         $setor = $this->setor->find($id);
 
 
-        return view ('setor.edit', compact('setor'));
+        return view ('admin.setor.edit', compact('setor'));
     }
 
 
