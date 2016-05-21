@@ -12,7 +12,7 @@ class CreateArtigosTable extends Migration
      */
     public function up()
     {
-        DB::statement('set foreign_key_checks = 0;');
+        /*DB::statement('set foreign_key_checks = 0;');*/
         Schema::create('artigos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo',255);
@@ -34,7 +34,7 @@ class CreateArtigosTable extends Migration
 
             $table->timestamps();
         });
-        DB::statement('set foreign_key_checks = 1;');
+        /*DB::statement('set foreign_key_checks = 1;');*/
     }
 
     /**

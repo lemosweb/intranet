@@ -12,7 +12,7 @@ class CreateVagasTable extends Migration
      */
     public function up()
     {
-        DB::statement('set foreign_key_checks = 0;');
+        /*DB::statement('set foreign_key_checks = 0;');*/
         Schema::create('vagas', function (Blueprint $table) {
 
             $table->increments('id');
@@ -32,7 +32,7 @@ class CreateVagasTable extends Migration
 
             $table->timestamps();
         });
-        DB::statement('set foreign_key_checks = 1;');
+        /*DB::statement('set foreign_key_checks = 1;');*/
     }
 
     /**
