@@ -25,7 +25,7 @@ class CreateVagasTable extends Migration
             $table->foreign('cargo_id')->references('id')->on('cargos');
 
             $table->integer('setor_id')->unsigned();
-            $table->foreign('setor_id')->references('id')->on('setor');
+            $table->foreign('setor_id')->references('id')->on('setors');
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

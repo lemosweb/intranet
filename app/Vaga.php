@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Vaga extends Model
 {
     protected $fillable = [
-        'status',
-        'cargo_id'
+        'descricao',
+        'validade',
+        'cargo_id',
+        'setor_id',
+        'user_id',
+
     ];
 
     public function cargo()

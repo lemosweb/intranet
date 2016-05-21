@@ -28,6 +28,11 @@
             <li><a href="{{ route('colaborador.index') }}">Colaborador</a></li>
             <li><a href="{{ route('setor.index') }}">Setores</a></li>
             <li><a href="{{ route('cargo.index') }}">Cargo</a></li>
+            <li><a href="{{ route('categoria.index') }}">Categoria</a></li>
+            <li><a href="{{ route('artigo.index') }}">Artigo</a></li>
+            <li><a href="{{ route('contato.index') }}">Contato</a></li>
+            <li><a href="{{ route('vaga.index') }}">Vaga</a></li>
+            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 
         </ul>
     </div>

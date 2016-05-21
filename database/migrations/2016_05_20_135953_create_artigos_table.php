@@ -21,12 +21,13 @@ class CreateArtigosTable extends Migration
             $table->dateTime('data');
             $table->dateTime('validade');
             $table->boolean('status_aprovacao');
+            $table->boolean('favorito');
 
-            $table->integer('colaborador_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('categoria_id')->unsigned();
             $table->integer('setor_id')->unsigned();
 
-            $table->foreign('colaborador_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->foreign('setor_id')->references('id')->on('setors');
 

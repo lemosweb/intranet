@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="page-header">
-            <h1>Cadastrar Setor</h1>
+            <h1>Editar Colaborador</h1>
         </div>
         @include('error_template')
     </div>
@@ -39,7 +39,7 @@
 
         <div class="form-group">
             {!! Form::label('nivel', 'Nivel de Acesso: ') !!}
-            {!! Form::select('nivel_de_acesso', array('0' => 'Usuario Padrão', '1' => 'Líder do Setor', '3' => 'Master')) !!}
+            {!! Form::select('nivel_de_acesso', array('0' => 'Usuario Padrão', '1' => 'Líder do Setor', '2' => 'Master')) !!}
         </div>
 
         <div class="form-group">
@@ -56,16 +56,8 @@
             </div>
 
 
-
-
-
-
-
-
-
-
             <div class="form-group">
-                {!! Form::submit('Cadastrar Colaborador', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Atualizar Colaborador', ['class' => 'btn btn-primary']) !!}
             </div>
 
             {!! Form::close() !!}

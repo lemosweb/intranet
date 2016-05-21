@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 
 
-    Route::group(['prefix' => 'admin'], function(){
+    Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function(){
+
+        Route::get('/',['as' => 'admin.index', 'uses' => 'AdminController@index']);
 
         Route::group(['prefix' => 'setor'], function(){
 
@@ -52,12 +54,56 @@ Route::get('/', function () {
 
         });
 
+        Route::group(['prefix' => 'categoria'], function(){
+
+            Route::get('/',['as' => 'categoria.index', 'uses' => 'AdminCategoriaController@index']);
+            Route::get('cadastrar',['as' => 'categoria.cadastrar', 'uses' => 'AdminCategoriaController@cadastrar']);
+            Route::post('store',['as' => 'categoria.store', 'uses' => 'AdminCategoriaController@store']);
+            Route::get('{id}/edit',['as' => 'categoria.edit', 'uses' => 'AdminCategoriaController@edit']);
+            Route::put('{id}/update', ['as' => 'categoria.update', 'uses' => 'AdminCategoriaController@update']);
+            Route::get('{id}/destroy',['as' => 'categoria.destroy', 'uses' => 'AdminCategoriaController@destroy']);
+
+        });
+
+        Route::group(['prefix' => 'artigo'], function(){
+
+            Route::get('/',['as' => 'artigo.index', 'uses' => 'AdminArtigoController@index']);
+            Route::get('cadastrar',['as' => 'artigo.cadastrar', 'uses' => 'AdminArtigoController@cadastrar']);
+            Route::post('store',['as' => 'artigo.store', 'uses' => 'AdminArtigoController@store']);
+            Route::get('{id}/edit',['as' => 'artigo.edit', 'uses' => 'AdminArtigoController@edit']);
+            Route::put('{id}/update', ['as' => 'artigo.update', 'uses' => 'AdminArtigoController@update']);
+            Route::get('{id}/destroy',['as' => 'artigo.destroy', 'uses' => 'AdminArtigoController@destroy']);
+
+        });
+
+        Route::group(['prefix' => 'contato'], function(){
+
+            Route::get('/',['as' => 'contato.index', 'uses' => 'AdminContatoController@index']);
+            Route::get('cadastrar',['as' => 'contato.cadastrar', 'uses' => 'AdminContatoController@cadastrar']);
+            Route::post('store',['as' => 'contato.store', 'uses' => 'AdminContatoController@store']);
+            Route::get('{id}/edit',['as' => 'contato.edit', 'uses' => 'AdminContatoController@edit']);
+            Route::put('{id}/update', ['as' => 'contato.update', 'uses' => 'AdminContatoController@update']);
+            Route::get('{id}/destroy',['as' => 'contato.destroy', 'uses' => 'AdminContatoController@destroy']);
+
+        });
+
+        Route::group(['prefix' => 'vaga'], function(){
+
+            Route::get('/',['as' => 'vaga.index', 'uses' => 'AdminVagaController@index']);
+            Route::get('cadastrar',['as' => 'vaga.cadastrar', 'uses' => 'AdminVagaController@cadastrar']);
+            Route::post('store',['as' => 'vaga.store', 'uses' => 'AdminVagaController@store']);
+            Route::get('{id}/edit',['as' => 'vaga.edit', 'uses' => 'AdminVagaController@edit']);
+            Route::put('{id}/update', ['as' => 'vaga.update', 'uses' => 'AdminVagaController@update']);
+            Route::get('{id}/destroy',['as' => 'vaga.destroy', 'uses' => 'AdminVagaController@destroy']);
+
+        });
 
 
 
 
-        Route::get('categoria',['as' => 'categoria.index', 'uses' => 'CategoriaController@index']);
-        Route::get('vaga',['as' => 'vaga.index', 'uses' => 'VagaController@index']);
+
+
+
 
     });
 

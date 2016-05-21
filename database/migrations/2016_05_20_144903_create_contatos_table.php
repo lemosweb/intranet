@@ -21,8 +21,8 @@ class CreateContatosTable extends Migration
             $table->string('empresa');
             $table->string('endereco');
 
-            $table->integer('colaborador_id')->unsigned();
-            $table->foreign('colaborador_id')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
         });

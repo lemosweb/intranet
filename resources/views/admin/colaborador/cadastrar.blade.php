@@ -41,7 +41,7 @@
 
         <div class="form-group">
             {!! Form::label('nivel', 'Nivel de Acesso: ') !!}
-            {!! Form::select('nivel_de_acesso', array('0' => 'Usuario Padrão', '1' => 'Líder do Setor', '3' => 'Master')) !!}
+            {!! Form::select('nivel_de_acesso', array('0' => 'Usuario Padrão', '1' => 'Líder do Setor', '2' => 'Master')) !!}
         </div>
 
         <div class="form-group">
@@ -56,14 +56,6 @@
             {!! Form::radio('status',true) !!}
             {!! Form::label('status', 'Intativo ') !!}
         </div>
-
-
-
-
-
-
-
-
 
 
         <div class="form-group">
