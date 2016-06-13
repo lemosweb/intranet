@@ -6,6 +6,7 @@ use App\Contato;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Gate;
 
 class AdminContatoController extends Controller
 {
@@ -14,6 +15,12 @@ class AdminContatoController extends Controller
     public function __construct(Contato $contato)
     {
         $this->contato = $contato;
+
+        if(Gate::denies('master-lider-user')){
+
+            abort(403, 'Acesso negado!');
+
+        }
     }
 
     public function  index()
@@ -35,7 +42,7 @@ class AdminContatoController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(Requests\RequestContato $request)
     {
         $contato = $this->contato->create($request->all());
 
@@ -53,7 +60,7 @@ class AdminContatoController extends Controller
         return view ('admin.contato.edit', compact('contato','users'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, Requests\RequestContato $request)
     {
         $contato = $this->contato->find($id);
 

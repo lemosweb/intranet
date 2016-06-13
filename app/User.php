@@ -49,6 +49,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Vaga');
     }
 
+    public function enquetes()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function respostasEnquete()
+    {
+        return $this->belongsToMany(Resposta::class,'users_respostas');
+    }
+
 
 
 

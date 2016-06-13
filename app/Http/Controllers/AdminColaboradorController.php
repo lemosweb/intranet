@@ -38,7 +38,16 @@ class AdminColaboradorController extends Controller
 
     public function store(Request $request)
     {
-        $colaborador = $this->colaborador->create($request->all());
+
+        $nome = $request->input('password');
+
+        $nomeCrypt = bcrypt($nome);
+
+        $request->request->add(['password' => $nomeCrypt]);
+
+
+        //dd($request->all());
+        $this->colaborador->create($request->all());
 
         return redirect()->route('colaborador.index');
     }
@@ -57,6 +66,13 @@ class AdminColaboradorController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        $nome = $request->input('password');
+
+        $nomeCrypt = bcrypt($nome);
+
+        $request->request->add(['password' => $nomeCrypt]);
+
         $colaborador = $this->colaborador->find($id);
 
         $colaborador->update($request->all());

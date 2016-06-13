@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Vaga extends Model
 {
@@ -28,5 +29,16 @@ class Vaga extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function inativaVaga()
+    {
+
+        $result = $this->whereDate('validade', '<', Carbon::today())->update(['status' => false]);
+
+
+        return ($result ? $result : $this->whereDate('validade', '>=', Carbon::today())->update(['status' => true]));
+
+
     }
 }

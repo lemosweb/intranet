@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class AdminCategoriaController extends Controller
@@ -31,7 +30,7 @@ class AdminCategoriaController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(Requests\RequestCategoria $request)
     {
         $categoria = $this->categoria->create($request->all());
 
@@ -48,7 +47,7 @@ class AdminCategoriaController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Requests\RequestCategoria $request, $id)
     {
         $categoria = $this->categoria->find($id);
 

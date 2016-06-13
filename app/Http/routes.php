@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 
-    Route::group(['prefix' => 'admin'/*, 'middleware' => ['web', 'auth']*/], function(){
+    Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function(){
 
         Route::get('/',['as' => 'admin.index', 'uses' => 'AdminController@index']);
 
@@ -73,6 +73,19 @@ Route::get('/', function () {
             Route::get('{id}/edit',['as' => 'artigo.edit', 'uses' => 'AdminArtigoController@edit']);
             Route::put('{id}/update', ['as' => 'artigo.update', 'uses' => 'AdminArtigoController@update']);
             Route::get('{id}/destroy',['as' => 'artigo.destroy', 'uses' => 'AdminArtigoController@destroy']);
+            Route::get('{id}/aprovar',['as' => 'artigo.aprovar', 'uses' => 'AdminArtigoController@aprovar']);
+            Route::get('{id}/favorito',['as' => 'artigo.favorito', 'uses' => 'AdminArtigoController@favorito']);
+
+        });
+
+
+        Route::group(['prefix' => 'images'], function(){
+
+            Route::get('{id}/artigo',['as'=>'images.index', 'uses' => 'AdminImageController@index']);
+            Route::get('create/{id}/artigo',['as'=>'images.create', 'uses' => 'AdminImageController@createImage']);
+            Route::post('store/{id}/artigo',['as'=>'images.store', 'uses' => 'AdminImageController@storeImage']);
+            Route::get('destroy/{id}/artigo',['as'=>'images.destroy', 'uses' => 'AdminImageController@destroyImage']);
+
 
         });
 
@@ -98,11 +111,67 @@ Route::get('/', function () {
 
         });
 
+        Route::group(['prefix' => 'enquete'], function(){
+
+            Route::get('/',['as' => 'enquete.index', 'uses' => 'AdminEnqueteController@index']);
+            Route::get('cadastrar',['as' => 'enquete.cadastrar', 'uses' => 'AdminEnqueteController@cadastrar']);
+            Route::post('store',['as' => 'enquete.store', 'uses' => 'AdminEnqueteController@store']);
+            Route::get('{id}/edit',['as' => 'enquete.edit', 'uses' => 'AdminEnqueteController@edit']);
+            Route::put('{id}/update', ['as' => 'enquete.update', 'uses' => 'AdminEnqueteController@update']);
+            Route::get('{id}/destroy',['as' => 'enquete.destroy', 'uses' => 'AdminEnqueteController@destroy']);
+
+        });
+
+
+        Route::group(['prefix' => 'respostas'], function(){
+
+            Route::get('/{id}',['as' => 'respostas.index', 'uses' => 'AdminRespostasController@index']);
+            Route::get('{id}/cadastrar',['as' => 'respostas.cadastrar', 'uses' => 'AdminRespostasController@cadastrar']);
+            Route::post('{id}/store',['as' => 'respostas.store', 'uses' => 'AdminRespostasController@store']);
+            Route::get('{id}/edit',['as' => 'respostas.edit', 'uses' => 'AdminRespostasController@edit']);
+            Route::put('{id}/update', ['as' => 'respostas.update', 'uses' => 'AdminRespostasController@update']);
+            Route::get('{id}/destroy',['as' => 'respostas.destroy', 'uses' => 'AdminRespostasController@destroy']);
+
+        });
+
+
+        Route::group(['prefix' => 'enqueteview'], function(){
+
+            Route::get('/',['as' => 'enqueteview.index', 'uses' => 'EnqueteController@index']);
+            Route::post('/',['as' => 'enqueteview.store', 'uses' => 'EnqueteController@store']);
+            Route::get('{id}/votado',['as' => 'enqueteview.votado', 'uses' => 'EnqueteController@votado']);
 
 
 
+        });
+
+        Route::group(['prefix' => 'institucional'], function(){
+
+            Route::get('/',['as' => 'institucional.index', 'uses' => 'AdminInstitucionalController@index']);
+            Route::get('{id}/edit',['as' => 'institucional.edit', 'uses' => 'AdminInstitucionalController@edit']);
+            Route::put('{id}/update', ['as' => 'institucional.update', 'uses' => 'AdminInstitucionalController@update']);
 
 
+        });
+
+
+        Route::group(['prefix' => 'institucional'], function(){
+
+            Route::get('/',['as' => 'institucional.index', 'uses' => 'AdminInstitucionalController@index']);
+            Route::get('{id}/edit',['as' => 'institucional.edit', 'uses' => 'AdminInstitucionalController@edit']);
+            Route::put('{id}/update', ['as' => 'institucional.update', 'uses' => 'AdminInstitucionalController@update']);
+
+
+        });
+
+        Route::group(['prefix' => 'politicas'], function(){
+
+            Route::get('/',['as' => 'politicas.index', 'uses' => 'AdminPoliticasController@index']);
+            Route::get('cadastrar',['as' => 'politicas.cadastrar', 'uses' => 'AdminPoliticasController@cadastrar']);
+            Route::get('{id}/edit',['as' => 'politicas.edit', 'uses' => 'AdminPoliticasController@edit']);
+            Route::put('{id}/update', ['as' => 'politicas.update', 'uses' => 'AdminPoliticasController@update']);
+
+        });
 
 
     });

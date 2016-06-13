@@ -16,13 +16,14 @@ class CreateContatosTable extends Migration
         Schema::create('contatos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome',255);
+            $table->string('email');
             $table->integer('telefone');
             $table->integer('nextel');
             $table->string('empresa');
             $table->string('endereco');
 
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

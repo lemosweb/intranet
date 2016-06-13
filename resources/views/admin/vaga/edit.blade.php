@@ -28,13 +28,13 @@
 
 
         <div class="form-group">
-            {!! Form::label('validade', 'Validade: ') !!}
-            {!! Form::text('validade', null, ['class' => 'form-control']) !!}
+            {!! Form::label('validade', 'Artigo válido até: ') !!}
+            {!! Form::date('validade', \Carbon\Carbon::now()) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('descricao', 'Descrição: ') !!}
-            {!! Form::text('descricao', null, ['class' => 'form-control']) !!}
+            {!! Form::textarea('descricao', null, ['class' => 'form-control']) !!}
         </div>
 
 

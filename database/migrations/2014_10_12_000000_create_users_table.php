@@ -12,14 +12,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        /*DB::statement('set foreign_key_checks = 0;');*/
+        DB::statement('set foreign_key_checks = 0;');
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('telefone',15);
-            $table->string('foto',255);
+            $table->date('data_nascimento');
+            $table->string('telefone');
+            $table->string('ramal');
+            $table->string('foto');
             $table->integer('nivel_de_acesso');
             $table->boolean('status');
             $table->integer('cargo_id')->unsigned();
@@ -30,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->foreign('cargo_id')->references('id')->on('cargos');
             $table->foreign('setor_id')->references('id')->on('setors');
         });
-        /*DB::statement('set foreign_key_checks = 1;');*/
+        DB::statement('set foreign_key_checks = 1;');
     }
 
     /**

@@ -15,6 +15,7 @@
                     <th>Setor</th>
                     <th>Descrição</th>
                     <th>Validade</th>
+                    <th>Status</th>
                     <th>Cadastrado por</th>
                     <th>Ações</th>
                 </tr>
@@ -27,6 +28,7 @@
                         <td>{{ $vaga->setor->nome }}</td>
                         <td>{{ $vaga->descricao}}</td>
                         <td>{{ $vaga->validade }}</td>
+                        <td>{{ ($vaga->status == true ? 'Ativo' : 'Inativo') }}</td>
                         <td>{{ $vaga->user->name }}</td>
                         <td><a href="{{ route('vaga.edit', ['id' => $vaga->id ]) }}" class="btn btn-default">Editar</a>
                             <a href="{{ route('vaga.destroy', ['id' => $vaga->id ]) }}" class="btn btn-danger">Excluir</a></td>

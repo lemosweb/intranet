@@ -1,0 +1,369 @@
+/*
+Ajustes do site,
+*/
+
+
+
+/* 
+ Dispositivos com largura mínima de 1200 pixels. Por exemplo TVs.
+*/
+@media screen and (min-width: 1200px) {
+  #ajuste{
+    margin-left: 0px;
+}
+}
+
+/* 
+ Pra dispositivos que tem uma largura mínima de 768 pixels. Tablets, por exemplo.
+*/
+@media screen and (min-width: 768px) {
+ 
+    
+}
+ 
+/* 
+ Com uma largura mínima de 992 pixels. Monitores por exemplo.
+*/
+@media screen and (min-width: 992px) {
+  #ajuste{
+    padding-left: 0px;
+}
+}
+ 
+/* 
+ Dispositivos com largura mínima de 1200 pixels. Por exemplo TVs.
+*/
+@media screen and (min-width: 1200px) {
+ 
+    
+    
+}
+
+/* 
+  ----------- CSS geral - - Personalizado ----------
+*/
+
+/* 
+  ----------- CSS HOME INTRANET ----------
+*/
+.titulo-mural{
+    width:100%;
+    position: relative;
+    margin-top: -88px;
+    padding: 10px;
+    float: left;
+    color:#fff;
+    max-width: 100%;  
+    background-color: #485b62;
+    
+    
+   
+}
+.h4mural{
+    font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color:#fff;
+}
+
+
+
+.aviso-destaque{
+   
+    background-color: #0e97a2;
+    color:#fff;
+}
+.aviso-destaque a{
+     background-color: #0e97a2;
+    color:#fff;
+}
+.aviso-destaque a:hover {
+    background-color: #0b8690 !important;
+    
+    color:#fff;
+}
+.icon-enquetes{
+    background-color: #0091ea;
+    margin-top: 1px !important;
+    left: 6px !important;
+    float: left;
+    border-radius: 15px;
+    padding: 2px 9px;
+    margin-right: 12px;
+}
+
+  
+
+.title1box {
+  font-size: 19px;
+  color: #fff;
+  max-height:150px;
+  min-height: 100px;
+  font-weight: 400;
+  text-align: left;
+  background-color: #8bc34a;
+  padding: 20px;
+}
+.title2box {
+  font-size: 19px;
+  color: #fff;
+  max-height:150px;
+  min-height: 100px;
+  font-weight: 400;
+  text-align: left;
+  background-color: #10c3d1;
+  padding: 20px;
+}
+.title3box {
+  font-size: 19px;
+  color: #fff;
+  max-height:150px;
+  min-height: 100px;
+  font-weight: 400;
+  text-align: left;
+  background-color: #668089;
+  padding: 20px;
+}
+.title4box {
+  font-size: 19px;
+  color: #fff;
+  max-height:150px;
+  min-height: 100px;
+  font-weight: 400;
+  text-align: left;
+  background-color: #3f555c;
+  padding: 20px;
+}
+.title1boxp{
+  font-size: 13px;
+  color: #fff;
+  text-align: left;
+  border-bottom: 2px solid #5e8727;
+  margin-top: 12px;
+ 
+}
+.title2boxp{
+  font-size: 13px;
+  color: #fff;
+  text-align: left;
+  border-bottom: 2px solid #0f848d;
+  margin-top: 12px;
+ 
+}
+.title3boxp{
+  font-size: 13px;
+  color: #fff;
+  text-align: left;
+  border-bottom: 2px solid #485b62;
+  margin-top: 12px;
+ 
+}
+.title4boxp{
+  font-size: 13px;
+  color: #fff;
+  text-align: left;
+  border-bottom: 2px solid #2e4046;
+  margin-top: 12px;
+ 
+}
+#ajusteicon{
+    margin-left: 15px;
+}
+
+
+
+.ajusteleft{
+    float: left;
+    margin-top: 12px;
+}
+
+.ajusteright{
+     float: right;
+     margin-top: 12px;
+}
+
+.img-noticia{
+    float: left;
+    margin-right: 12px;
+}
+.fatoniver { 
+    float: left;
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 2px solid #b8b9b9;
+    height:75px;
+    width: 75px;
+    margin-bottom: 12px;
+    background-color: #fff;
+}
+
+.nomeniver{
+    font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color:#485b63;
+    font-size: 20px;
+}
+
+.dataniver{
+    font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color:#6f777b;
+    font-size: 18px;
+    
+}
+.setoriver{
+    font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color:#6f777b;
+    font-size: 13px;
+    
+}
+
+
+#ajustepagination{
+    margin-left: 12px;
+}
+
+.demo-options{
+    margin-top: -46px;
+}
+
+.textoempresa{
+    padding: 12px;
+}
+
+.valoresempresa {
+    
+    padding: 10px;
+    background-color: #3945be;
+    color:#fff;
+    
+}
+
+.icon-agenda{
+    float: left;
+    width:120px;
+    height: 99px;
+}
+.segura-noticia-postada{
+    padding: 25px;
+    background-color: #fff;
+}
+#ajustebtns{
+    height:55px;
+    float:left;
+    margin-bottom: 25px;
+}
+#ajusbtn-usuario{
+    float:left;
+    margin-bottom: 30px;
+}
+#ajusteselectramal{
+    max-width:500px;
+    min-width: 350px;
+    height:40px;
+    float:left;
+    padding-bottom: 10px;
+}
+.ajustebtn-enquete{
+    float:left;
+    margin-top: 25px;
+}
+.texto-enquete-aberta{
+     font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color:#6f777b;
+    font-size: 14px;
+    text-align: justify;
+}
+.texto-enquete-aberta h3{
+    
+    margin-top: -32px;
+   
+}
+#ajuste-cor-borda{
+     background-color: #f3f3f3;
+    padding: 10px;
+    margin-bottom: 35px;
+}
+.texto-enquete-resultado{
+     font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom: 16px;
+    color:#6f777b;
+    font-size: 13px;
+    text-align: justify;
+    float: left;
+}
+.texto-enquete-resultado h3{
+    font-size: 17px;
+    margin-top: -12px;
+}
+#ajuste-cor-resultado{
+    border:1px solid #f3f3f3;
+    background-color: #f3f3f3;
+    height: auto;
+    float:right;
+    margin-bottom: 12px;
+}
+.ajustebtn-enquete-resultado{
+    float:left;
+    margin-left: -8px;
+}
+
+.box-select-enquete{
+    background-color: #eae9e9;
+    font-family: "Open Sans","Droid Sans",Tahoma,Arial,sans-serif;
+    margin-bottom:3px;
+    color:#000;
+    font-size: 14px;
+    padding: 5px;
+    height:32px;
+    
+}
+#btn-cadastrar-noticia{
+    float:left;
+    margin-bottom:12px;
+}
+
+
+#bloco-campos-c-n{
+    margin-bottom: 12px;
+}
+
+#ajsutemargen-btn{
+    margin-left: 24px;
+}
+#ajuste-busca-org{
+ margin-top: -10px;
+}
+#ajuste-busca-ad-contato{
+ margin-top: -10px;
+}
+
+
+#lider-organograma{
+    border: 2px solid #03a9f4;
+    background-color: #fff;
+}
+
+#ajuste-setor-ramal{
+    width:300px;
+    margin-left: -12px;
+    float: left;
+}
+
+#box-galeria{
+    min-height:100px;
+}
+
+
+#ajustebtn-galeria{
+    padding-bottom: 16px;
+}
+/* 
+  ----------- CSS HOME INTRANET FIM  ----------
+*/

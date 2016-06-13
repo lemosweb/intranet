@@ -12,20 +12,16 @@
         {!! Form::open(['route' => 'artigo.store']) !!}
 
 
-
+        @can('only-master')
         <div class="form-group">
             {!! Form::label('setor', 'Setor: ') !!}
             {!! Form::select('setor_id', $setores->lists('nome', 'id')) !!}
         </div>
+        @endcan
 
         <div class="form-group">
             {!! Form::label('categoria', 'Categoria: ') !!}
             {!! Form::select('categoria_id', $categorias->lists('nome', 'id')) !!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('nome', 'Nome: ') !!}
-            {!! Form::select('user_id', $users->lists('name', 'id')) !!}
         </div>
 
 
@@ -35,8 +31,13 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('validade', 'Artigo válido até: ') !!}
+            {!! Form::date('validade', \Carbon\Carbon::now()) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('texto', 'Texto: ') !!}
-            {!! Form::text('texto', null, ['class' => 'form-control']) !!}
+            {{ Form::textarea('texto', null, ['class' => 'form-control']) }}
         </div>
 
 

@@ -16,19 +16,19 @@ class CreateVagasTable extends Migration
         Schema::create('vagas', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->string('status',255);
+            $table->boolean('status');
 
             $table->text('descricao');
             $table->date('validade');
 
             $table->integer('cargo_id')->unsigned();
-            $table->foreign('cargo_id')->references('id')->on('cargos');
+            $table->foreign('cargo_id')->references('id')->on('cargos')->onDelete('cascade');
 
             $table->integer('setor_id')->unsigned();
-            $table->foreign('setor_id')->references('id')->on('setors');
+            $table->foreign('setor_id')->references('id')->on('setors')->onDelete('cascade');
 
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

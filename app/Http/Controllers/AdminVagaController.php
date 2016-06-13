@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Vaga;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Gate;
 
 class AdminVagaController extends Controller
 {
@@ -16,6 +17,14 @@ class AdminVagaController extends Controller
     public function __construct(Vaga $vaga)
     {
         $this->vaga = $vaga;
+
+        if(Gate::denies('master-lider')){
+
+            abort(403, 'Acesso negado!');
+
+        }
+
+        $this->vaga->inativaVaga();
     }
 
     public function  index()

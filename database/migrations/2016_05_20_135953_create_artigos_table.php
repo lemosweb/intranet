@@ -17,19 +17,19 @@ class CreateArtigosTable extends Migration
             $table->increments('id');
             $table->string('titulo',255);
             $table->text('texto');
-            $table->text('foto');
-            $table->dateTime('data');
-            $table->dateTime('validade');
-            $table->boolean('status_aprovacao');
+            $table->date('data');
+            $table->date('validade');
+            $table->boolean('status');
+            $table->boolean('status_aprovacao')->default(false);
             $table->boolean('favorito');
 
             $table->integer('user_id')->unsigned();
             $table->integer('categoria_id')->unsigned();
             $table->integer('setor_id')->unsigned();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('categoria_id')->references('id')->on('categorias');
-            $table->foreign('setor_id')->references('id')->on('setors');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+            $table->foreign('setor_id')->references('id')->on('setors')->onDelete('cascade');
 
 
             $table->timestamps();

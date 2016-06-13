@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Setor;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Session;
+
 
 class AdminSetorController extends Controller
 {
@@ -14,12 +19,22 @@ class AdminSetorController extends Controller
     public function __construct(Setor $setor)
     {
         $this->setor = $setor;
+
+
+        if(Gate::denies('only-master')){
+
+            abort(403, 'Acesso negado!');
+
+        }
+
     }
 
     public function  index()
     {
 
         $setores = $this->setor->paginate(5);
+
+
 
         return view('admin.setor.index',compact('setores'));
     }

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Artigo extends Model
 {
@@ -23,6 +24,22 @@ class Artigo extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function inativaArtigo()
+    {
+
+        $result = $this->whereDate('validade', '<', Carbon::today())->update(['status' => false]);
+
+
+        return ($result ? $result : $this->whereDate('validade', '>=', Carbon::today())->update(['status' => true]));
+
+
     }
 
 

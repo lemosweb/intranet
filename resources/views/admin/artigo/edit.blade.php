@@ -33,8 +33,13 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('validade', 'Artigo válido até: ') !!}
+            {!! Form::date('validade', \Carbon\Carbon::now()) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('texto', 'Texto: ') !!}
-            {!! Form::text('texto', null, ['class' => 'form-control']) !!}
+            {{ Form::textarea('texto', null, ['class' => 'form-control']) }}
         </div>
 
 
