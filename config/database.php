@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'lemosweb.mysql.dbaas.com.br'/*'localhost'*/),
+            'host' => env('DB_HOST', 'localhost'/*'localhost'*/),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'lemosweb'/*'forge'*/),
-            'username' => env('DB_USERNAME', 'lemosweb'/*'forge'*/),
-            'password' => env('DB_PASSWORD', 'manosgana1'),
+            'database' => env('DB_DATABASE', 'dbtest'/*'forge'*/),
+            'username' => env('DB_USERNAME', 'root'/*'forge'*/),
+            'password' => env('DB_PASSWORD', 'root'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
