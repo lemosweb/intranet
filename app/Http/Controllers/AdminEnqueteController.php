@@ -30,7 +30,6 @@ class AdminEnqueteController extends Controller
         $enquetes  = (Auth::user()->nivel_de_acesso == 2 ? $this->enquete->paginate(10) : $this->enquete->where('setor_id', Auth::user()->setor_id)->paginate(10));
 
 
-
         return view('admin.enquete.index',compact('enquetes', 'message'));
     }
 

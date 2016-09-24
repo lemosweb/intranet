@@ -155,14 +155,6 @@ Route::get('/', function () {
         });
 
 
-        Route::group(['prefix' => 'institucional'], function(){
-
-            Route::get('/',['as' => 'institucional.index', 'uses' => 'AdminInstitucionalController@index']);
-            Route::get('{id}/edit',['as' => 'institucional.edit', 'uses' => 'AdminInstitucionalController@edit']);
-            Route::put('{id}/update', ['as' => 'institucional.update', 'uses' => 'AdminInstitucionalController@update']);
-
-
-        });
 
         Route::group(['prefix' => 'politicas'], function(){
 
@@ -170,6 +162,30 @@ Route::get('/', function () {
             Route::get('cadastrar',['as' => 'politicas.cadastrar', 'uses' => 'AdminPoliticasController@cadastrar']);
             Route::get('{id}/edit',['as' => 'politicas.edit', 'uses' => 'AdminPoliticasController@edit']);
             Route::put('{id}/update', ['as' => 'politicas.update', 'uses' => 'AdminPoliticasController@update']);
+
+        });
+
+        Route::group(['prefix' => 'noticia'], function(){
+
+            Route::get('/',['as' => 'noticia.index', 'uses' => 'AdminNoticiaController@index']);
+            Route::get('cadastrar',['as' => 'noticia.cadastrar', 'uses' => 'AdminNoticiaController@cadastrar']);
+            Route::post('store',['as' => 'noticia.store', 'uses' => 'AdminNoticiaController@store']);
+            Route::get('{id}/edit',['as' => 'noticia.edit', 'uses' => 'AdminNoticiaController@edit']);
+            Route::put('{id}/update', ['as' => 'noticia.update', 'uses' => 'AdminNoticiaController@update']);
+            Route::get('{id}/destroy',['as' => 'noticia.destroy', 'uses' => 'AdminNoticiaController@destroy']);
+            Route::get('{id}/aprovar',['as' => 'noticia.aprovar', 'uses' => 'AdminNoticiaController@aprovar']);
+            Route::get('{id}/favorito',['as' => 'noticia.favorito', 'uses' => 'AdminNoticiaController@favorito']);
+
+        });
+
+        Route::group(['prefix' => 'categorianoticia'], function(){
+
+            Route::get('/',['as' => 'categorianoticia.index', 'uses' => 'AdminCategoriaNoticiaController@index']);
+            Route::get('cadastrar',['as' => 'categorianoticia.cadastrar', 'uses' => 'AdminCategoriaNoticiaController@cadastrar']);
+            Route::post('store',['as' => 'categorianoticia.store', 'uses' => 'AdminCategoriaNoticiaController@store']);
+            Route::get('{id}/edit',['as' => 'categorianoticia.edit', 'uses' => 'AdminCategoriaNoticiaController@edit']);
+            Route::put('{id}/update', ['as' => 'categorianoticia.update', 'uses' => 'AdminCategoriaNoticiaController@update']);
+            Route::get('{id}/destroy',['as' => 'categorianoticia.destroy', 'uses' => 'AdminCategoriaNoticiaController@destroy']);
 
         });
 

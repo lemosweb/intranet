@@ -6,7 +6,7 @@ use App\Cargo;
 use App\Setor;
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 
 class AdminColaboradorController extends Controller
@@ -21,7 +21,14 @@ class AdminColaboradorController extends Controller
     public function  index()
     {
 
-        $colaboradores = $this->colaborador->paginate(5);
+
+
+            $colaboradores = (Auth::user()->nivel_de_acesso == 2 ? $this->colaborador->paginate(6) : $this->colaborador->where('setor_id', Auth::user()->setor_id)->paginate(6));
+
+
+
+
+
 
         return view('admin.colaborador.index',compact('colaboradores'));
     }

@@ -41,7 +41,13 @@
 
     <link type="text/css" href="{{asset('assets/plugins/form-daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet"> 	<!-- DateRangePicker -->
     <link type="text/css" href="{{asset('assets/plugins/fullcalendar/fullcalendar.css')}}" rel="stylesheet"> 					<!-- FullCalendar -->
-    <link type="text/css" href="{{asset('assets/plugins/charts-chartistjs/chartist.min.css')}}" rel="stylesheet"> 				<!-- Chartist -->
+    <link type="text/css" href="{{asset('assets/plugins/charts-chartistjs/chartist.min.css')}}" rel="stylesheet">
+
+
+
+    <!-- Chartist -->
+
+
 
 </head>
 
@@ -131,26 +137,87 @@
     <div class="yamm navbar-left navbar-collapse collapse in">
         <ul class="nav navbar-nav">
 
-            @can('only-master')
-            <li><a href="{{ route('institucional.index') }}">Gerenciar Institucional</a></li>
-            <li><a href="{{ route('colaborador.index') }}">Colaborador</a></li>
-            <li><a href="{{ route('setor.index') }}">Setores</a></li>
-            <li><a href="{{ route('categoria.index') }}">Categoria</a></li>
-            <li><a href="{{ route('cargo.index') }}">Cargo</a></li>
-            <li><a href="{{ route('politicas.index') }}">Políticas</a></li>
+            <li><a href="{{ route('admin.index') }}">Inicio</a></li>
 
-            @endcan
+            <li class="dropdown" id="widget-classicmenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Institucional<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+
+                    <li><a href="escritorio.php">Sobre o Escritório</a></li>
+                    <li><a href="clientes.php">Clientes</a></li>
+                    <li><a href="cases-de-sucesso.php">Cases de Sucesso</a></li>
+
+                    @can('only-master')
+                    <li><a href="{{ route('institucional.index') }}">Gerenciar Institucional</a></li>
+                    @endcan
+
+                </ul>
+            </li>
+
+            <li class="dropdown" id="widget-classicmenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Pessoas<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+
+                    <li><a href="clientes.php">Clientes</a></li>
+                    <li><a href="cases-de-sucesso.php">Cases de Sucesso</a></li>
+
+                    @can('only-master')
+                    <li><a href="{{ route('colaborador.index') }}">Gerenciar Organograma</a></li>
+                    @endcan
+
+                </ul>
+            </li>
 
             @can('master-lider')
-            <li><a href="{{ route('enquete.index') }}">Enquete</a></li>
-            <li><a href="{{ route('artigo.index') }}">Artigo</a></li>
-            <li><a href="{{ route('vaga.index') }}">Vaga</a></li>
+            <li class="dropdown" id="widget-classicmenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Gerenciar Intranet<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    @can('only-master')
+                    <li><a href="{{ route('setor.index') }}">Setores</a></li>
+                    <li><a href="{{ route('categoria.index') }}">Categorias</a></li>
+                    <li><a href="{{ route('cargo.index') }}">Cargos</a></li>
+                    <li><a href="{{ route('politicas.index') }}">Políticas</a></li>
+                    @endcan
+
+                    @can('master-lider')
+                    <li><a href="{{ route('enquete.index') }}">Enquetes</a></li>
+                    <li><a href="{{ route('categorianoticia.index') }}">Categoria de Noticias</a></li>
+                    <li><a href="{{ route('noticia.index') }}">Noticia</a></li>
+                    <li><a href="{{ route('artigo.index') }}">Artigos</a></li>
+                    <li><a href="{{ route('vaga.index') }}">Vagas</a></li>
+                    @endcan
+                </ul>
+            </li>
             @endcan
 
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Sistemas<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">RLANET</a></li>
+                    <li><a href="#">Abertura de Chamados (TI)</a></li>
+
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Políticas e Procedimentos</a>
+            </li>
+
+            <li class="dropdown" id="widget-classicmenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Modelos e Formulários<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Adicionar</a></li>
+                    <li><a href="#">Adicionar</a></li>
+
+                </ul>
+            </li>
+
+
+
             @can('master-lider-user')
-            <li><a href="{{ route('contato.index') }}">Contato</a></li>
-            <li><a href="{{ route('enqueteview.index') }}"><strong>Responder Enquete</strong></a></li>
-            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout ({{Auth::user()->name}})</a></li>
+
+
+            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sair ({{Auth::user()->name}})</a></li>
             @endcan
 
         </ul>
@@ -253,11 +320,10 @@
                                 <li><a href="javascript:;"><i class="fa fa-random"></i><span>Mapa da Plataforma</span></a>
                                     <ul class="acc-menu">
                                         <li><a href="#">Adicionar</a></li>
-
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('contato.index') }}"><i class="fa fa-fw fa-envelope"></i><span>Contatos</span></a></li>
-                                <li><a href="noticias.php"><i class="fa fa-pencil-square-o"></i><span>Notícias</span></a></li>
+                                <li><a href="{{ route('contato.index') }}"><i class="fa fa-fw fa-envelope"></i><span>Minha Agenda</span></a></li>
+                                <li><a href="{{ route('noticia.index') }}"><i class="fa fa-pencil-square-o"></i><span>Notícias</span></a></li>
                                 <li><a href="{{ route('enqueteview.index') }}"><i class="fa fa-tasks"></i><span>Enquetes</span></a></li>
                                 <li><a href="{{ route('colaborador.index') }}"><i class="fa fa-share-alt"></i><span>Organograma</span></a></li>
 
@@ -359,7 +425,9 @@
             </ul>
         </div>
 
-    </div>    <!-- /Configurações de cores - lateral -->
+    </div>
+
+    </div><!-- /Configurações de cores - lateral -->
 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
@@ -409,9 +477,23 @@
     <script type="text/javascript" src="{{ asset('assets/plugins/form-daterangepicker/moment.min.js') }}"></script>              	<!-- Moment.js for Date Range Picker -->
     <script type="text/javascript" src="{{ asset('assets/plugins/form-daterangepicker/daterangepicker.js') }}"></script>     				<!-- Date Range Picker -->
 
-    <script type="text/javascript" src="{{ asset('assets/demo/demo-index.js') }}"></script> 										<!-- Initialize scripts for this page-->
+    <script type="text/javascript" src="{{ asset('assets/demo/demo-index.js') }}"></script>
 
-    <!-- End loading page level scripts-->
+    <script type="text/javascript" src="assets/plugins/summernote/dist/summernote.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 200
+            });
+
+            $('.airmode').summernote({
+                airMode: true
+            });
+        });
+    </script>
+
+
 
 </body>
 </html>

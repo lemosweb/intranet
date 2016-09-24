@@ -76,9 +76,7 @@ class AdminArtigoController extends Controller
         $setores = $setor->all();
         $categorias = $categoria->all();
 
-
         $artigo = $this->artigo->find($id);
-
 
         return view ('admin.artigo.edit', compact('artigo','categorias','setores','users'));
     }

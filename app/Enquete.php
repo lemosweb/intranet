@@ -60,6 +60,7 @@ class Enquete extends Model
     {
         $result = $this->where('setor_id', Auth::user()->setor_id)->where('status', '1')->count();
 
+
         if($result >= 1){
 
             return true;

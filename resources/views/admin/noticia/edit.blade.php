@@ -6,12 +6,12 @@
             <div class="page-content">
                 <ol class="breadcrumb">
 
-                    <li><a href="{{ route('artigo.index') }}">Notícias</a></li>
-                    <li class="{{ route('artigo.index') }}"><a href="cadastrar-noticia.php">Cadastrar Notícia</a></li>
+                    <li><a href="{{ route('noticia.index') }}">Notícias</a></li>
+                    <li class="{{ route('noticia.index') }}"><a href="cadastrar-noticia.php">Cadastrar Notícia</a></li>
 
                 </ol>
                 <div class="page-heading">
-                    <h1>Cadastrar Notícia</h1>
+                    <h1>Atualizar Notícia</h1>
                     <div class="options">
 
                     </div>
@@ -23,10 +23,10 @@
                             <div class="panel panel-default">
 
                                 <div class="panel-body pb0">
-                                    <p class="mb20">Cadastre Notícias.</p>
+                                    <p class="mb20">Atualizar Notícias.</p>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            {!! Form::model($artigo,['route' => ['artigo.update', $artigo->id], 'method' => 'put']) !!}
+                                            {!! Form::model($noticia,['route' => ['noticia.update', $noticia->id], 'method' => 'put']) !!}
                                             <div class="form-group">
                                                 <div  class="row">
                                                     <div id="bloco-campos-c-n" class="col-md-6">
@@ -45,7 +45,7 @@
                                                     </div>
 
                                                     <div id="bloco-campos-c-n" class="col-md-6">
-                                                        {!! Form::label('validade', 'Artigo válido até: ') !!}
+                                                        {!! Form::label('validade', 'noticia válido até: ') !!}
                                                         {!! Form::date('validade', \Carbon\Carbon::now(), ['class' => 'form-control', 'placeholder' => 'Data']) !!}
                                                     </div>
 
@@ -72,7 +72,7 @@
                                                 <div  class="row">
                                                     <div id="ajustebtns" class="col-md-6">
                                                         <div class="form-group">
-                                                            {!! Form::submit('Cadastrar Artigo', ['class' => 'btn-primary btn', 'id' => 'ajsutemargen-btn']) !!}
+                                                            {!! Form::submit('Atualizar Noticia', ['class' => 'btn-primary btn', 'id' => 'ajsutemargen-btn']) !!}
                                                         </div>
                                                     </div>
                                                 </div>

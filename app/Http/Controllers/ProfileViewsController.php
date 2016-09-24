@@ -16,8 +16,7 @@ class ProfileViewsController extends Controller
 
     public function favorito()
     {
-
-        return redirect()->back();
+        //return redirect()->back();
     }
 
 

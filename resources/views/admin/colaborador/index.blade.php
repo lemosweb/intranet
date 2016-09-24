@@ -8,12 +8,12 @@
             <ol class="breadcrumb">
 
                 <li><a href="index.php">Home</a></li>
-                <li><a href="Organograma.php">Organograma</a></li>
+                <li><a href="Organograma.php">Gerenciar Organograma</a></li>
 
 
             </ol>
             <div class="page-heading">
-                <h1>Organograma</h1>
+                <h1>@can('master-lider')Gerenciar @endcan Organograma</h1>
                 <div class="options">
 
                 </div>
@@ -22,13 +22,14 @@
 
                 <div class="col-md-6">
                     <ul class="demo-btns">
+                        @can('master-lider')
                         <li>
                             <a class="btn btn-lg btn-primary-alt btn-label" href="{{ route('colaborador.cadastrar') }}">
                                 <i class="fa  fa-user"></i>
                                 Novo Colaborador
                             </a>
                         </li>
-
+                        @endcan
                     </ul>
                 </div>
 
@@ -87,10 +88,13 @@
                                         {{ $status = ($colaborador->status == 1 ? 'Ativo' : 'Inativo') }}
                                     </li>
 
+                                    @can('master-lider')
                                     <li>
                                         <a href="{{ route('colaborador.edit', ['id' => $colaborador->id ]) }}" class="btn btn-default">Editar</a>
                                         <a href="{{ route('colaborador.destroy', ['id' => $colaborador->id ]) }}" class="btn btn-default">Excluir</a>
                                     </li>
+                                    @endcan
+
 
 
                                 </ul>
@@ -102,7 +106,12 @@
 
                 @endforeach
 
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ $colaboradores->render() }}
+                    </div>
 
+                </div>
             </div> <!-- .container-fluid -->
         </div> <!-- #page-content -->
     </div>

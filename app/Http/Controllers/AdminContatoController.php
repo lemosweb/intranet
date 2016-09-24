@@ -6,6 +6,7 @@ use App\Contato;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AdminContatoController extends Controller
@@ -26,7 +27,7 @@ class AdminContatoController extends Controller
     public function  index()
     {
 
-        $contatos = $this->contato->paginate(5);
+        $contatos = $this->contato->paginate(4);
 
         return view('admin.contato.index',compact('contatos'));
     }
@@ -42,8 +43,11 @@ class AdminContatoController extends Controller
     }
 
 
-    public function store(Requests\RequestContato $request)
+    public function store(Request $request)
     {
+
+        $request->request->add(['user_id' => Auth::user()->id]);
+
         $contato = $this->contato->create($request->all());
 
         return redirect()->route('contato.index');
@@ -60,7 +64,7 @@ class AdminContatoController extends Controller
         return view ('admin.contato.edit', compact('contato','users'));
     }
 
-    public function update($id, Requests\RequestContato $request)
+    public function update($id, Request $request)
     {
         $contato = $this->contato->find($id);
 

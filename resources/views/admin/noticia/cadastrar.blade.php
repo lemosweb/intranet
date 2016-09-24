@@ -6,8 +6,8 @@
             <div class="page-content">
                 <ol class="breadcrumb">
 
-                    <li><a href="{{ route('artigo.index') }}">Notícias</a></li>
-                    <li class="{{ route('artigo.index') }}"><a href="cadastrar-noticia.php">Cadastrar Notícia</a></li>
+                    <li><a href="{{ route('noticia.index') }}">Notícias</a></li>
+                    <li class=""><a href="{{ route('noticia.index') }}">Cadastrar Notícia</a></li>
 
                 </ol>
                 <div class="page-heading">
@@ -26,7 +26,7 @@
                                     <p class="mb20">Cadastre Notícias.</p>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            {!! Form::open(['route' => 'artigo.store']) !!}
+                                            {!! Form::open(['route' => 'noticia.store']) !!}
                                                 <div class="form-group">
                                                     <div  class="row">
                                                         <div id="bloco-campos-c-n" class="col-md-6">
